@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To-Do List</title>
+</head>
+<body>
+	<h1>To-Do List</h1>
+	<ul>
+	    <% todos.forEach((todo) => { %>
+	        <li>
+		    <%= todo.title %>
+		    <% if (todo.done) { %>
+		      (Done)
+		    <% } %>
+		</li>
+	    <% }); %>
+	</ul>
+
+	<form action="/todos" method="POST">
+	    <input type="text" name="title" placeholder="Title" required>
+	    <input type="text" name="description" placeholder="Description">
+	    <button type="submit">Add</button>
+	</form>
+</body>
+</html>
